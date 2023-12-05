@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+
+    <title>Iniciar Sesión</title>
+</head>
+
+<body>
+    <h2>Iniciar Sesión</h2>
+    <form id="loginForm">
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="button" onclick="login()">Iniciar Sesión</button>
+        <p>¿Aún no tienes un usuario?</p>
+        <a class="contacto-button" href="altauser.html">Registrarse</a>
+    </form>
+
+    <script>
+        async function login() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+    
+            // Objeto para enviar datos al backend
+            var data = {
+                usuario: username,
+                contrasena: password
+            };
+    
+            try {
+                const response = await fetch('http://127.0.0.1:5000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+    
+                if (response.ok) {
+                    const responseData = await response.json();
+                    window.location.href = responseData.redirect_url;
+                } else {
+                    const errorData = await response.json();
+                    alert(`Error: ${errorData.error_message}`);
+                }
+            } catch (error) {
+                console.error('Error durante la solicitud:', error);
+            }
+        }
+    </script>
+    
+</body>
+
+</html>

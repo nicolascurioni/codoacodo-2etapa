@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a0bdc6f5bf.js" crossorigin="anonymous"></script>
+    <title>Editar Usuario</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <div class="header-content">
+                <img src="/static/img/Pytour.png" alt="Logo" id="logo">
+            </div>
+
+            <div class="api">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataContainer">
+                    </tbody>
+                </table>
+                <script src="/static/scripts/apidolar.js"></script>
+            </div>
+
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="newindex.html">Inicio</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="feriados.html">Fiestas nacionales</a></li>
+                    <li><a href="/templates/login.html">Inicia sesion</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+    <h2>Editar Usuario</h2>
+
+    <form id="formEditar" method="post" action="/actualizar_usuario">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" value="{{ usuarioInfo.usuario }}" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" value="{{ usuarioInfo.contrasena }}" required>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" value="{{ usuarioInfo.nombre }}" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" value="{{ usuarioInfo.apellido }}" required>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" value="{{ usuarioInfo.direccion }}" required>
+
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" name="ciudad" value="{{ usuarioInfo.ciudad }}" required>
+
+        <label for="provincia">Provincia:</label>
+        <input type="text" id="provincia" name="provincia" value="{{ usuarioInfo.provincia }}" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="number" id="telefono" name="telefono" value="{{ usuarioInfo.telefono }}" required>
+
+        <input type="hidden" id="usuario_id" name="usuario_id" value="{{ usuarioInfo.id }}">
+
+        <button type="submit">Guardar Cambios</button>
+    </form>
+
+    <script>
+        document.getElementById('formEditar').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Obtén el formulario y sus datos
+            var formData = new FormData(this);
+
+
+            fetch('http://127.0.0.1:5000/actualizar_usuario', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+
+                    alert('Usuario actualizado correctamente.');
+                    window.location.href = '/perfil.html'; 
+                } else {
+
+                    throw new Error("Error al actualizar el usuario. Código de estado: " + response.status);
+                }
+            })
+            .catch(error => {
+                console.error('Error durante la solicitud:', error);
+                alert("Error al actualizar el usuario. Consulta la consola del navegador para más detalles.");
+            });
+        });
+    </script>
+    <div class="item3">
+        <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook"
+                style="color: #f8f8fc;"></i></a>
+        <a href="https://twitter.com/?lang=es"><i class="fa-brands fa-x-twitter" style="color: #f8f8fc;"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="color: #f8f8fc;"></i></a>
+        <a href="https://ar.pinterest.com/"><i class="fa-brands fa-pinterest" style="color: #f8f8fc;"></i></a><br>
+        <br>
+        <div>&copy; 2023 Pytour</div>
+    </div>
+    <script src="/static/scripts/menu.js"></script>
+</body>
+
+</html>

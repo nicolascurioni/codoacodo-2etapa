@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a0bdc6f5bf.js" crossorigin="anonymous"></script>
+    <title>Perfil de Usuario</title>
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="header">
+            <div class="header-content">
+                <img src="/static/img/Pytour.png" alt="Logo" id="logo">
+            </div>
+
+            <div class="api">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataContainer">
+                    </tbody>
+                </table>
+                <script src="/static/scripts/apidolar.js"></script>
+            </div>
+
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="newindex.html">Inicio</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="feriados.html">Fiestas nacionales</a></li>
+                    <li><a href="/templates/login.html">Inicia sesion</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+  
+
+        <div class="centered">
+            <div>
+                <h2>Perfil de Usuario - Bienvenido/a {{ usuarioInfo.usuario }}!</h2>
+            </div>
+          
+            <div id="user-info">
+                <p>Usuario: <span id="username">{{ usuarioInfo.usuario }}</span></p>
+                <p>Nombre: <span id="nombre">{{ usuarioInfo.nombre }}</span></p>
+                <p>Apellido: <span id="apellido">{{ usuarioInfo.apellido }}</span></p>
+                <p>Dirección: <span id="direccion">{{ usuarioInfo.direccion }}</span></p>
+                <p>Ciudad: <span id="ciudad">{{ usuarioInfo.ciudad }}</span></p>
+                <p>Provincia: <span id="provincia">{{ usuarioInfo.provincia }}</span></p>
+                <p>Teléfono: <span id="telefono">{{ usuarioInfo.telefono }}</span></p>
+            </div>
+
+            <div id="error-message" style="display: none;">
+                <p id="error-content"></p>
+                <button onclick="cerrarMensajeError()">Cerrar</button>
+            </div>
+
+            <div>
+                <button onclick="editarUsuario()">Editar</button>
+                <button onclick="eliminarUsuario()">Borrar</button>
+                <input type="hidden" id="usuario_id" value="{{ usuarioInfo.id }}">
+            </div>
+        </div>
+        
+        <script>
+            function ObtenerUsuarioId() {
+                // Lógica para obtener el usuario_id, por ejemplo, desde algún elemento en tu HTML
+                return document.getElementById('usuario_id').value;
+            }
+
+            function mostrarMensajeError(mensaje) {
+                document.getElementById('error-content').textContent = mensaje;
+                document.getElementById('error-message').style.display = 'block';
+            }
+
+            function cerrarMensajeError() {
+                document.getElementById('error-message').style.display = 'none';
+            }
+
+            function editarUsuario() {
+                // Redirigir a la página de edición
+                window.location.href = '/editar.html';
+            }
+
+            function eliminarUsuario() {
+                if (confirm("¿Estás seguro de que deseas eliminar tu cuenta?")) {
+                    var usuario_id = ObtenerUsuarioId();
+
+                    console.log("Usuario a eliminar: ", usuario_id);
+
+                    fetch('http://127.0.0.1:5000/eliminar_usuario', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ usuario_id: usuario_id }),
+                        credentials: 'include',
+                    })
+                        .then(response => {
+                            if (response.ok) {
+                                return response.json();
+                            } else {
+                                throw new Error("Error al eliminar el usuario. Código de estado: " + response.status);
+                            }
+                        })
+                        .then(data => {
+                            alert(data.message);
+                            window.location.href = '/';
+                        })
+                        .catch(error => {
+                            console.error('Error durante la solicitud:', error);
+                            alert("Error al eliminar el usuario. Consulta la consola del navegador para más detalles.");
+
+
+                            console.error(error);
+                        });
+                }
+            }
+
+        </script>
+
+        <div class="item3">
+            <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook"
+                    style="color: #f8f8fc;"></i></a>
+            <a href="https://twitter.com/?lang=es"><i class="fa-brands fa-x-twitter" style="color: #f8f8fc;"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="color: #f8f8fc;"></i></a>
+            <a href="https://ar.pinterest.com/"><i class="fa-brands fa-pinterest" style="color: #f8f8fc;"></i></a><br>
+            <br>
+            <div>&copy; 2023 Pytour</div>
+        </div>
+
+        <script src="/static/scripts/menu.js"></script>
+</body>
+
+</html>

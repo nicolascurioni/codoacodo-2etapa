@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiestas Nacionales · Pytour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a0bdc6f5bf.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Fira+Sans:wght@300&family=Montserrat:wght@200&family=PT+Sans&family=Rubik&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <div class="header-content">
+                <img src="/static/img/Pytour.png" alt="Logo" id="logo">
+            </div>
+
+            <div class="api">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataContainer">
+                    </tbody>
+                </table>
+                <script src="/static/scripts/apidolar.js"></script>
+            </div>
+
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="newindex.html">Inicio</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="feriados.html">Fiestas nacionales</a></li>
+                    <li><a href="/templates/login.html">Inicia sesion</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+
+        </div>
+
+        <div class="item2">
+
+            <div class="contenedor-grid-dest">
+                <div class="imagen">
+                    <img src="/static/img/chamame.jpg" alt="Fiesta Nacional del Chamame">
+                </div>
+                <div class="descripcion">
+                    <p class="titulo">Fiesta Nacional <br>del Chamamé</p>
+                    <p class="subtitulo">Provincia de Corrientes</p>
+                    <p class="datos"> La Fiesta del Chamamé se celebra en la ciudad de Corrientes, específicamente en el Anfiteatro Cocomarola y en el Puente Pexoa, donde cada año durante 5 noches de enero suena y se baila el chamamé.</p>
+                </div>
+                <div class="contenedor-consulta">
+                    <p class="precio-intro">Paquete por 2 noches para 2 personas:</p>
+                    <p class="precio">$390.000</p>
+                    <div class="consulta">
+                        <a href="contacto.html">Consultá disponibilidad</a>
+                    </div>
+                </div>
+                <div class="imagen"> <img src="/static/img/chaya.jpg" alt="Fiesta Nacional de La Chaya"> </div>
+                <div class="descripcion">
+                    <p class="titulo">Fiesta Nacional <br>de la Chaya</p>
+                    <p class="subtitulo"> Provincia de La Rioja</p>
+                    <p class="datos">Esta fiesta tiene un trascendental contenido histórico tradicional, y ha sabido resignificarse con el paso del tiempo, pero manteniendo vivo su origen cultural y simbólico. Remonta a las celebraciones de agradecimiento a la Pachamama realizadas por los diaguitas, habitantes originarios del lugar. </p>
+                </div>
+                <div class="contenedor-consulta">
+                    <p class="precio-intro">Paquete por 2 noches para 2 personas:</p>
+                    <p class="precio">$570.000</p>
+                    <div class="consulta">
+                        <a href="contacto.html">Consultá disponibilidad</a>
+                    </div>
+                </div>
+                <div class="imagen"> <img src="/static/img/vendimia.jpeg" alt="Fiesta Nacional de la Vendimia"></div>
+                <div class="descripcion">
+                    <p class="titulo">Fiesta Nacional <br>de la Vendimia</p>
+                    <p class="subtitulo"> Provincia de Mendoza</p>
+                    <p class="datos">La Fiesta Nacional de la Vendimia es la fiesta nacional más antigua de nuestro país. Tuvo su primera edición en 1936 y constituye un punto central de reunión y celebración no sólo en la región, sino para la Argentina en su conjunto.</p>
+                </div>
+                <div class="contenedor-consulta">
+                    <p class="precio-intro">Paquete por 2 noches para 2 personas:</p>
+                    <p class="precio">$410.000</p>
+                    <div class="consulta">
+                        <a href="contacto.html">Consultá disponibilidad</a>
+                    </div>
+                </div>
+                <div class="imagen"><img src="/static/img/lago.jpg" alt="Fiesta Nacional del Lago"></div>
+                <div class="descripcion">
+                    <p class="titulo">Fiesta Nacional <br>del lago argentino</p>
+                    <p class="subtitulo"> Provincia de Santa Cruz</p>
+                    <p class="datos"> Esta fiesta, que dura nueve días en la segunda quincena de febrero, tiene por objetivo principal conmemorar la fecha en que el Perito Francisco Moreno bautizó al lago más grande de la Patagonia.</p>
+                </div>
+                <div class="contenedor-consulta">
+                    <p class="precio-intro">Paquete por 2 noches para 2 personas:</p>
+                    <p class="precio">$950.000</p>
+                    <div class="consulta">
+                        <a href="contacto.html">Consultá disponibilidad</a>
+                    </div>
+                </div>
+                <div class="imagen"> <img src="/static/img/sol.jpg" alt="Fiesta Nacional del Sol"></div>
+                <div class="descripcion">
+                    <p class="titulo">Fiesta Nacional <br>del sol</p>
+                    <p class="subtitulo">Provincia de San Juan</p>
+                    <p class="datos"> La Fiesta Nacional del Sol es la celebración en honor al Sol mas importante de Argentina, que se lleva a cabo anualmente en la Ciudad de San Juan, durante la ultima semana del mes de febrero, a lo largo de cinco días.</p>
+                </div>
+                <div class="contenedor-consulta">
+                    <p class="precio-intro">Paquete por 2 noches para 2 personas:</p>
+                    <p class="precio">$830.000</p>
+                    <div class="consulta">
+                        <a href="contacto.html">Consultá disponibilidad</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="item3">
+            <!-- imagenes redes sociales -->
+            <a href="https://www.facebook.com/paulinacocina.net/?locale=es_LA"><i class="fa-brands fa-facebook"
+                    style="color: #f8f8fc;"></i></a>
+            <a href="https://twitter.com/paulina_cocina?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+                    class="fa-brands fa-x-twitter" style="color: #f8f8fc;"></i></a>
+            <a href="https://www.instagram.com/paulinacocina/" style="color: #f8f8fc;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://ar.pinterest.com/paulinacocina/" style="color: #f8f8fc;"><i class="fa-brands fa-pinterest"></i></a><br>
+            <br>
+            <div>&copy; 2023 Pytour</div>
+
+
+        </div>
+    </div>
+    <script src="/static/scripts/menu.js"></script>
+</body>
+
+
+</html>

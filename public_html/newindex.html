@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home · Pytour</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/static/css/newstyle.css">
+    <link rel="icon" href="/static/img/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a0bdc6f5bf.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed&family=Fira+Sans:wght@300&family=Montserrat:wght@200&family=PT+Sans&family=Rubik&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="header">
+            <div class="header-content">
+                <img src="static/img/Pytour.png" alt="Logo" id="logo">
+            </div>
+
+            <div class="api">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Moneda</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataContainer">
+                    </tbody>
+                </table>
+                <script src="static/scripts/apidolar.js"></script>
+            </div>
+
+            <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+            <nav class="nav" id="nav">
+                <button class="cerrar-menu" id="cerrar"><i class="bi bi-x"></i></button>
+                <ul class="nav-list">
+                    <li><a href="newindex.html">Inicio</a></li>
+                    <li><a href="destinos.html">Destinos</a></li>
+                    <li><a href="feriados.html">Fiestas nacionales</a></li>
+                    <li><a href="/templates/login.html">Inicia sesion</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="item2">
+            <div>
+                <h2>¡Bienvenidos a Pytour!</h2>
+
+
+                <div class="parrafo-container">
+                    <p class="parrafo">
+                        Descubre el mundo con nosotros y vive experiencias inolvidables en cada rincón del planeta. En
+                        Pytour,
+                        creemos que los viajes son mucho más que destinos; son puertas abiertas a la aventura, la
+                        cultura y la conexión
+                        con el mundo que nos rodea.
+                    </p>
+
+                    <p class="parrafo">
+                        Nuestra misión es convertir tus sueños de viajar en realidades inolvidables. Ya sea que busques
+                        una escapada
+                        romántica, unas vacaciones familiares o una aventura extrema, estamos aquí para hacer que tu
+                        viaje sea
+                        excepcional.
+                    </p>
+                </div>
+
+
+                <div id="elegirnos">
+                    <h2>Por qué elegirnos</h2>
+                </div>
+
+                <div class="features-carousel">
+                    <div class="features-container">
+                        <div class="feature">
+                            <h3>Experiencia</h3>
+                            <p>Con más de 20 años en la industria de viajes, hemos acumulado conocimiento y contactos
+                                alredeor del país. Sabemos lo que se necesita para crear el viaje perfecto.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Atención Personalizada</h3>
+                            <p>Cada viaje es único, y lo tratamos como tal. Nuestros expertos en viajes trabajarán
+                                contigo
+                                para diseñar un itinerario a medida que se adapte a tus gustos y necesidades.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Destinos Inolvidables</h3>
+                            <p>Desde las montañas de nuestro hermoso Norte hasta los maravillosos glaciares de la
+                                Patagonia,
+                                ofrecemos una amplia gama de destinos emocionantes.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Seguridad y Confianza</h3>
+                            <p>Tu seguridad es nuestra prioridad. Trabajamos con proveedores confiables y te brindamos
+                                asistencia 24/7 durante tu viaje.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Sostenibilidad</h3>
+                            <p>Estamos comprometidos con la sostenibilidad y el turismo responsable, garantizando que
+                                las
+                                comunidades locales se beneficien de nuestros viajes.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <h2>Promociones destacadas</h2>
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="/static/img/mendoza slide.png" alt="Slide 1">
+                </div>
+                <div class="slide fade">
+                    <img src="/static/img/bariloche slide.png" alt="Slide 2">
+                </div>
+                <div class="slide fade">
+                    <img src="/static/img/ushuaia slide.png" alt="Slide 3">
+                </div>
+
+                <button class="slideshow-btn next" onclick="plusSlides(1)">&#8250;</button>
+                <button class="slideshow-btn prev" onclick="plusSlides(-1)">&#8249;</button>
+            </div>
+            <script src="static/scripts/slide.js"></script>
+
+            <div class="explora-container">
+                <p class="explora-text">
+                    Explora nuestro sitio web y encuentra inspiración en nuestra colección de destinos y paquetes. No
+                    importa si eres un aventurero intrépido o un amante de la cultura, tenemos algo para todos. ¡Tu
+                    próximo
+                    viaje comienza aquí!
+                </p>
+                <p class="contacto-text">
+                    Contáctanos hoy para empezar a planificar tus próximas aventuras. En Pytour, estamos listos para
+                    llevarte a lugares que nunca imaginaste y a experiencias que recordarás toda la vida. ¡Ven y
+                    descubre el
+                    país con nosotros!
+                </p>
+                <a class="contacto-button" href="contacto.html">¡Contáctanos!</a>
+            </div>
+
+        </div>
+
+        <div class="item3">
+            <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook"
+                    style="color: #f8f8fc;"></i></a>
+            <a href="https://twitter.com/?lang=es"><i class="fa-brands fa-x-twitter" style="color: #f8f8fc;"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" style="color: #f8f8fc;"></i></a>
+            <a href="https://ar.pinterest.com/"><i class="fa-brands fa-pinterest" style="color: #f8f8fc;"></i></a><br>
+            <br>
+            <div>&copy; 2023 Pytour</div>
+        </div>
+        <script src="static/scripts/menu.js"></script>
+</body>
+
+</html>

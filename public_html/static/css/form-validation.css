@@ -1,0 +1,76 @@
+.container {
+  max-width: 960px;
+}
+
+.lh-condensed { line-height: 1.25; }
+
+#provincia {
+  height: 38px; 
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+#provincia {
+  height: 38px; 
+} 
+
+#destino {
+  height: 35px;
+}
+
+#Contact-information {
+background-color: #bde4e4;
+color: #100101;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 10px;
+text-align: center;
+margin-top: 20px;
+}
+
+#Contact-information p {
+font-size: 1.5rem;
+margin: 10px 0;
+}
+
+#Contact-information a {
+text-decoration: none;
+color: #050400;
+font-weight: bold;
+font-size: 1.25rem;
+margin-bottom: 20px;
+}
+
+#Contact-information a:hover {
+text-decoration: underline;
+}
+
+#Contact-information iframe {
+width: 100%;
+height: 450px;
+border: none; 
+border-radius: 10px;
+}
+
+.item3 {
+  grid-area: footer;
+  background-color: #00b5b9;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Raleway', sans-serif; 
+}

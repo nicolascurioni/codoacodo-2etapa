@@ -14,12 +14,12 @@ function showSlides() {
     setTimeout(showSlides, 3200); 
 }
 
-// Function to show the next or previous slide
+
 function plusSlides(n) {
     showSlide(slideIndex += n);
 }
 
-// Function to display a specific slide
+
 function showSlide(n) {
     const slides = document.querySelectorAll('.slide');
     if (n > slides.length) {
